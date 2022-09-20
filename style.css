@@ -1,0 +1,747 @@
+/* cooler.co - super fast color scheme generator */
+
+/* RGB RED GREEN BLUE 0-255 */
+
+/* RGBA 0-1 opacity/transparency */
+
+/* HSL
+HEX values #RRGGBB
+123456789 A(10) B(11) C(12) D(13) E(14) F(15)
+          10 11 12 13 14 15
+          #FF0000 - RED
+          #00FF00 - GREEN
+            */
+
+/* font-size, width,height, pixels */
+/* 
+em - RELATIVE depends on parent(div)
+1em = 16px default browser style;
+1em = base value
+
+px - absolute 
+em - relative
+
+*/
+
+/* 
+rem - RELATIVE depends on root(e.g html is the root)
+1rem = 16px default browser style
+*/
+
+/* 
+vh - height - percent of the screen
+vw - width - percent of the screen
+*/
+
+/*
+default browser styles and google devTools 
+*/
+
+/* 
+cal()
+perform math operations + - * /
+mix and match values
+.banner {
+  background: red;
+  min-height: calc(100vh - 100px); // enables the view height to be exactly 100%
+*/
+
+/*
+fonts : 
+font-family: roboto , sans serif , times new roman 
+font-weight:bold, bolder,lighter,normal
+font-size: 20px , 10px ...
+text-align: center , right, left
+text-indent: uses values like rem , px
+*/
+
+/* 
+line-height: controls the spacing btween sentences in a paragraph . uses value e.g 1.5em ...
+letter-spacing: controls the spacing between letters e.g 5px ....
+word-spacing: controls the spacing between words in a sentence or paragraph e.g 20px ...
+text-transform: controls the casing of texts e.g uppercase; lowercase; capitalise; ....
+text-decoration: can remove a line from a link e.g
+a {
+  text-decoration: none; - removes the default underline from the selected html tag
+}
+
+h1 {
+  text-decoration: line-through; - applies a strike-through to a line
+}
+
+h2 {
+  text-decoration: overline; applies a line over the text and it's opposite is underline
+}
+ */
+
+/* CSS BOX MODEL */
+
+/*
+ PADDING (padding-top: 20px , padding-right, padding-bottom, padding-left)  , (applying one padding across = padding: 50px;)  ,, (all corners paddding shortcut = padding: 20px 10px 13px 40px;)
+ MARGIN  (works same way as padding.same techniques apply) 
+ BORDER (border-style: solid, dashed..
+          border-width: 10px, 20px ...
+          border-color: rgb(), rgba(), color ...
+          border:width, style, color ... (all border combined) 
+          border-bottom-style, color, width...
+          border-radius: 20px, or 50% ...for this we use values
+          border-margin: -100px(negative margin
+OUTLINE
+OFFSET
+            
+ )
+  */
+
+
+/* DISPLAY PROPERTY IN CSS */
+/* 
+   Block : Always starts a new line and takes full width - Top Bottom Margin Respected
+   Inline : Does not start and only take up as much as content space - Top Bottom Margin Not Respected
+   Mobile Navbar
+   list-style-type: none ; e.g ul li {
+     list-style-type: none , square , circle ...
+   descendant selectors
+  */
+
+/* 
+  a {
+    font-size: 60px;
+    background: red;
+    margin: 60px;
+    display: inline-block; - helps to style inline elements without changing their display to block
+  }
+   */
+
+/* 
+.box-1 {
+  background: red;
+  padding: 20px;
+  box-sizing: border-box; - will not mess up your all layout
+}
+*/
+
+/* 
+.none {
+  display: none; - totally removes the element from the DOM
+}
+.opacity {
+  opacity: 1; makes an element visible just same as visibility: visible
+}
+.opacity {
+  opacity: 0; hides the element just same as visibility: hidden;
+}
+
+opacity value is between 0-1 .... the values can be played with 
+*/
+
+/* 
+backgound-size:cover,..
+background-repeat: no-repeat; ...
+backgound-position: center , bottom, left, right,top
+ */
+/* 
+div {
+  height: 400px;
+  color: red;
+}
+
+.big-img {
+  background: url("./img/big.jpg");
+  background-position: center;
+  background-attachment: fixed;
+}
+.small-img {
+  background: url("./img/small.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+.folder-img {
+  background: url("./img/folder.jpg");
+  background-size: cover; 
+} */
+
+/* GRADIENTS */
+/* can be used to add overlay on background images 
+   
+*/
+/* div {
+  width:150px;
+  height: 150px;
+  margin: 5px;
+  /* display: flex; */
+/* }
+.one {
+  background: linear-gradient(red, green);
+}
+.two {
+  background: linear-gradient(to top red, green, yellow, blue);
+}
+.three {
+  background: linear-gradient(315deg, red, green);
+}
+.four {
+  background: linear-gradient(to top right(top left, to bottom) red, green); */
+/* }
+.five {
+  background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.8));
+} */
+
+/* * {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+div {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  font-size: 60px;
+  color: greenyellow;
+}
+.banner {
+  /* background: url("./img/big.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-attachment: fixed; */
+/* background: url("./img/big.jpg") center/cover fixed no-repeat;- shortcut for background overlay and appearance
+} */
+/* .header {
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),url("./img/big.jpg");
+}
+ .header {
+   background: linear-gradient(rgba(to top 0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("./img/big.jpg");
+ }
+  .three {
+    background: linear-gradient(to top red, yellow)
+  }
+   .four {
+     background: linear-gradient(to top left red, green)
+   }
+    .five {
+      background: linear-gradient(345deg red, yellow)
+    }
+  background-attachment: fixed;
+}  
+we can use Ultimate CSS Gradient Generator to generate linear gradient for our CSS
+*/
+
+/* CSS float , clear */
+
+/* .banner {
+  border: 5px solid red;
+  padding: 10px; - moves content away from the margin
+  overflow: hidden;- disables image from overflowing the content
+}
+
+.one {
+  float: left; - float property plays around with an image positioning but needs to be rectified using overflow property(in banner) and clear property(in paragraph)
+  margin-left: 50px;
+} */
+
+/* .two {
+  float: right;
+} */
+
+/* p {
+  clear: both;
+} */
+
+/* CSS POSITION  
+position: static - default positioning of a document
+position: absolute;
+position: fixed; - makes an element stay relative to a document . mostly set using top: 0; , right: 0 and position: fixed
+*/
+
+/* div {
+  border: 3px solid red;
+  background: gold;
+  margin-top: 40px;
+  position: static;
+}
+
+.one {
+  background: green;
+}
+
+.two {
+  background: blue;
+  /* position: relative; 
+  */
+/* } */
+
+/* .special {
+  background: chocolate;
+  font-size: 20px;
+  position: absolute;
+  top: 0;
+  right: 0;
+} */
+
+/* MEDIA QUERIES
+Responsive Design
+Style Elements On Different Screen Sizes
+min-width: --- starting from
+max-width --- up to
+Mobile First
+*/
+/* 
+body {
+  background: gold;
+}
+
+.banner {
+  background: chocolate;
+}
+
+h1 {
+  color: white;
+  text-align: center;
+  text-decoration: underline;
+  text-transform: capitalize;
+  /* font-size: 60px; */
+/* }
+
+@media screen and (min-width: 576px) {
+  body {
+    background: red;
+  }
+
+  .banner {
+    background: purple;
+  }
+
+  h1 {
+    color: black;
+    font-size: 60px;
+  }
+} */
+
+/* @media screen and (min-width: 768px) {
+  body {
+    background: pink;
+  }
+
+  .banner {
+    background: black;
+  }
+
+  h1 {
+    color: white;
+    font-size: 60px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+  }
+}  */
+
+/* Z-INDEX --- controls the Z-AXIS
+position: static --- does not work with z-index
+*/
+
+/* img {
+  width: 100px;
+  height: 100px;
+  position: absolute;
+}
+.banner {
+  margin: 20px;
+  width: 70vw;
+  height: 70vh;
+  border: 5px solid red;
+  position: relative;
+}
+.one {
+  top: 0;
+  left: 0;
+  position: relative;
+  z-index: 1;
+}
+.two {
+  top: 10%;
+  left:10%;
+}
+.three {
+  top: 20%;
+  left: 20%;
+} */
+
+/* 
+pseudo elements ::before ::after CONTENT not element content:'' --- required
+img --- does not work because an image is always already a content in a page
+
+p::first-line -styles the first line of the selection
+p::first-letter -styles the first letter
+
+*/
+
+/* p::before {
+  content:"hello ";
+  display: block;
+  background: gold;
+  font-weight: bold;
+  font-size: 32px;
+  color: red;
+  text-decoration: line-through;
+  text-transform: capitalize;
+} */
+
+/* p::after {
+  content: " after ";
+  font-weight: bold;
+  font-size: 32px;
+  color: red;
+  text-decoration: line-through;
+  text-transform: capitalize;
+  display: block;
+  background: gold;
+} */
+/* we can also add non-text item using pseudo  */
+/* whenever we position a child element to absolute then it's parent's position should be relative to make things right */
+/* p::after {
+  content: "";
+  display: block;
+  width: 50px;
+  height: 50px;
+  background: green;
+} */
+/* div {
+  width: 60vw;
+  margin: 100px auto;
+  border: 2px solid red;
+  position: relative;
+} */
+/* img {
+  width: 100%;
+  display: block;
+}
+div::before {
+  content: "";
+  border: 2px solid gold;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  box-sizing: border-box;
+  top: -40px;
+  left: -40px;
+  z-index: -2;
+  transition: all 0.5s linear;
+}
+div::after {
+  content: "";
+  background: hotpink;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  box-sizing: border-box;
+  top: -20px;
+  left: -20px;
+  z-index: -1;
+  transition: all 0.5s linear;
+}
+div:hover::before,
+div:hover::after {
+  top: 0;
+  left: 0;
+} */
+/* p::first-line {
+  text-decoration: line-through;
+  color: green;
+}
+p::first-letter {
+  color:gold;
+  font-weight: bolder;
+  font-size: 60px;
+  text-transform: uppercase;
+} */
+
+/* :link :visited :hover :active */
+
+/* a:link {
+  color: cornflowerblue;
+}
+a:visited {
+  color: gold;
+  font-weight: bold;
+}
+a:hover {
+  color: red;
+}
+a:active {
+color: blue;
+} */
+
+/* :root root element of the document
+html element
+general styles
+css variables
+*/
+/* changing the root element font-size when you already have other element's measurements in place only changes em or rem values but won't affect the absolute(px) values */
+
+/* :root {
+  font-size: 150%; 
+}
+h1 {
+  font-size: 3rem;
+}
+.absolute {
+  font-size: 24px;
+}
+.responsive {
+  font-size: 1.5rem;
+} */
+
+
+/* transform: translatex(50%, px),translatey(-30px or30px, %),rotate(),skew() 
+transform: scalex(2) - expands the element * 2 on the x-direction . can use other values as well to manipulate
+transform: scaley(2) - expands the element * 2 on the x-direction . can use other values as well to manipulate
+transform: translate() - moves an element in a specified direction wheather x or y direction
+transform: rotatez(45deg)
+transform: rotatey(45deg)
+transform: rotatex(45deg)
+*/
+
+
+
+/* div {
+  width: 150px;
+  height: 150px;
+  display: inline-block;
+} */
+/* div:hover{
+  background: chocolate;
+} */
+/* .one {
+  background: gold;
+  transform: scaley(0.5);
+} */
+/* .two {
+  background: red;
+  transform: skewy(10deg)
+} */
+/* .three {
+  background: lightblue;
+  transform: translatey(40px); */
+  /* transition-property: background, border-radius;
+  transition-duration: 4s; */
+  /* transition: all 4s 5s
+}
+.three:hover {
+  border-radius: 50%;
+  background: chocolate;
+} */
+/*
+  
+   transition: change over time
+   transition-delay
+   shorthand
+*/
+/* 
+how the transition takes place 
+transition-timing-function
+transition: all 3s here 5s;
+ease = default
+ease = slow start, fast, slow end
+linear = same speed start to end
+ease-in = slow start
+ease-out = slow end
+ease-in-out = slow start, fast, slow end
+
+*/
+
+/* .ease {
+  transition-timing-function: linear;
+}
+.linear {
+  transition-timing-function: linear;
+}
+.ease-in {
+  transition-timing-function: ease-in;
+}
+.ease-out {
+  transition-timing-function: ease-out;
+}
+.ease-in-out {
+  transition-timing-function: ease-in-out;
+} */
+
+
+ /* Transition is between 0 - 100% 
+ ANIMATION 0 1% 2% ..... 100% */
+/* 
+ div {
+   width: 200px;
+   height: 200px;
+   color: white;
+   margin: 10px;
+ }
+ .transition{
+   background: chocolate;
+   transition: all 2s linear;
+ }
+ .transition:hover{
+   background: green;
+   transform: translatex(75px);
+ }
+ .animation {
+   background: gold; */
+   /* animation-name: move;
+   animation-duration: 10s;
+   animation-iteration-count: 2; */
+   /* animation: move 5s infinite;
+ }
+
+ @keyframes move {
+   0% {
+     transform: translateX(20px);
+   }
+   50% {
+     transform: translateX(100px);
+   }
+   75% {
+     transform: translateX(-200px);
+     background: purple;
+   }
+   100% {
+     transform: translateX(20px);
+     background: green
+   }
+ } */
+
+
+ /* animation-fill-mode: what values are applied by the animation outside the time it is executing */
+
+  /* div {
+    width: 200px;
+    height: 200px;
+    color: white;
+    margin: 10px;
+  } */
+
+  /* .animation {
+    background: gold; */
+    /* animation-name: move;
+    animation-duration: 10s;
+    animation-iteration-count: 2; */
+    /* animation: move 5s 2;
+    animation-fill-mode: forwards;
+  }
+
+  @keyframes move {
+    0% {
+      opacity: 0;
+    }
+    25% {
+      transform: translateX(200px);
+      opacity: 0.25;
+    }
+    50% {
+      transform: translateX(-100px);
+      opacity: 1;
+    }
+    100% {
+      transform: translateX(0px);
+      opacity: 0.5;
+    }
+  } */
+
+  /* 
+  CSS VARIABLES AKA Custom properties
+  hold a value and reuse it
+  --varName:value -holds a value for reuse
+  property:var(--varName) - reuse happens here
+  scope
+  :root{} === global
+  element === local
+  any property
+
+  */
+
+  /* .heading {
+    color: #f15025;
+  }
+  .text {
+    color: #32ff0e;
+  }
+  .main-text {
+    color: #1313fa
+  } */
+
+  /* :root {
+    --primaryColor: purple;
+    --secondaryColor: gold;
+    --mainTransition: all 0.4s linear;
+  }
+  .heading {
+    color: var(--primaryColor);
+  }
+  .second-heading {
+    color: var(--primaryColor);
+    transition: var(--mainTransition);
+  }
+  .second-heading:hover {
+    color: var(--secondaryColor);
+  }
+
+  div {
+    --primaryRed: red;
+  }
+  .main-text {
+    color: var(--primaryRed);
+  }
+  .third-heading {
+    color: var(--primaryRed);
+  } */
+
+  /* 
+  ICONS 
+  Font-Awesome Icons
+  Free, Easy to get up running, simple syntax
+  */
+
+  /* 
+  text-shadow
+  box-shadow
+  */
+/* 
+  h1 {
+    text-shadow: 1px 1px 3px red; */
+    /* first is x-axis , second is y-axis, third is blur-intensity, fourth is background blur color */
+    /* can use external resource(css3 text-shadow generator) */
+  /* }
+  .box {
+    width: 200px;
+    height: 100px;
+    background: blue;
+    margin: 20px;
+    box-shadow: 3px 5px 5px gold; */
+        /* first is x-axis , second is y-axis, third is blur-intensity, fourth is background blur color */
+         /* can use external resource(css3 box-shadow generator) */
+  /* } */
+
+  /* some extra resources for browser prefixing
+  
+  Autoprefixer
+  caniuse.com - shows browser support 
+  
+  
+  */
+
+
+  /* SEMANTIC HTML */
+
+  /*flexbox */
+  /* flexbox container properties
+  display: flex;
+  flex flow: row,column, nowrap,wrap (flex direction , flex wrap)
+  justify-content:(deals with the main axis x-axis when flex-direction is row), center, flex-start, flex-end
+  align-content:defines what happens with extra space that we have in relation to the cross axis(y-xis), center, space-between
+  align-items:(refers to the position of items relating to the cross axis y-axis when flex-direction is column) stretch(default), center, flex-start, flex-end
+  */
+
+  /*items in a flex container(flex items) are known as children and the following properties can be applied to them
+  order:changes the position of flex-items(1,2 3...)
+  flex:1, 2 ...(defines the width of flex-items)
+  align-self:
+  flex-basis: 30% ... specifying size using flexbox
+  */
